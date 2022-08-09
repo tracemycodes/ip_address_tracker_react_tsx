@@ -1,0 +1,106 @@
+header {
+  width: 100%;
+  height: 13rem;
+  border: 1px solid transparent;
+  background-image: url(../../assets/pattern-bg.png);
+  background-position: center;
+  background-size: cover;
+}
+
+header h1 {
+  text-align: center;
+  color: white;
+  margin: 1.5rem;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+}
+
+form {
+  max-width: 35rem;
+  width: 85%;
+  margin: auto;
+  display: flex;
+  border-radius: 6px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+  background-color: hsl(0, 0%, 17%);
+  border: none;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  cursor: pointer;
+  padding: 0 0.7rem;
+  width: 10%;
+}
+
+input[type='text'] {
+  padding: 0.5rem 1rem;
+  width: 90%;
+  border: none;
+  border-radius: none;
+  font-size: clamp(0.65rem, 3vw, 1rem);
+}
+
+section {
+  border-radius: 10px;
+  background-color: white;
+  max-width: 45rem;
+  width: 85%;
+  padding: 2rem 1.5rem;
+  margin: 3rem auto;
+  display: flex;
+  z-index: 1;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.1);
+}
+
+section div {
+  width: 25%;
+}
+
+section > * + * {
+  border-left: 1px solid hsl(0, 0%, 59%);
+  padding: 0 1rem;
+}
+
+section h2 {
+  font-size: clamp(0.55rem, 2vw, 0.85rem);
+  color: hsl(0, 0%, 59%);
+  margin-top: -0.5rem;
+  letter-spacing: 0.08rem;
+}
+
+section p {
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  font-weight: bold;
+  margin-top: 0.5rem;
+  color: hsl(0, 0%, 17%);
+  letter-spacing: 0.05rem;
+}
+
+@media (max-width: 570px) {
+  header {
+    height: 17rem;
+  }
+  input[type='text'] {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+  }
+  section {
+    flex-direction: column;
+  }
+  section div {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  section > * + * {
+    border: none;
+    padding: 0;
+  }
+  section h2 {
+    font-size: clamp(0.75rem, 2vw, 1rem);
+  }
+  section p {
+    font-size: clamp(1rem, 2vw, 2rem);
+  }
+}
