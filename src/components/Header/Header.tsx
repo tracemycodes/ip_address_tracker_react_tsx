@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import MapInterface from '../mapBox/MapInterface';
+// import MapInterface from '../mapBox/MapInterface';
 import Details from './Details';
 import './Head.module.css';
 
@@ -16,7 +16,6 @@ const Header: FC = (props: IHeaderProps) => {
         </button>
       </form>
       <Details />
-      <MapInterface />
     </header>
   );
 };
