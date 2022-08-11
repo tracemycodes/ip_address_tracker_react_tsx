@@ -1,14 +1,4 @@
 .map-div {
   height: calc(100vh - 13rem);
-  /* z-index: -2; */
-  border: 2px solid red;
-  color: red;
-  width: 100%;
-}
-#map-div {
-  /* height: calc(100vh - 13rem); */
-  /* z-index: -2; */
-  border: 2px solid red;
-  color: red;
   width: 100%;
 }
