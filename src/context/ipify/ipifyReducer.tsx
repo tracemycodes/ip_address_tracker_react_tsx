@@ -14,7 +14,7 @@ const ipifyReducer = (state: State, action: Action) => {
         loading: false,
       };
     default:
-      break;
+      return state;
   }
 };
 
