@@ -20,6 +20,11 @@ const initialState = {
   error: null,
 };
 
+// const mainReducer = ({ products, shoppingCart }, action) => ({
+//   products: productReducer(products, action),
+//   shoppingCart: shoppingCartReducer(shoppingCart, action),
+// });
+
 export function IpifyState({ children }: { children: ReactNode }) {
   const [state, dispatch] = useReducer(pifyReducer, initialState);
 
