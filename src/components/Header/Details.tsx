@@ -1,9 +1,32 @@
-import React, { FC } from 'react';
+import React, { ReactElement } from 'react';
 import styles from './Head.module.css';
 
-export interface Props {}
+export interface Props {
+  locationInfo: {
+    ip: string;
+    location: {
+      country: string;
+      region: string;
+      city: string;
+      lat: number;
+      lng: number;
+      postalCode: string;
+      timezone: string;
+      geonameId: number;
+    };
+    domains: string[];
+    as: {
+      asn: number;
+      name: string;
+      route: string;
+      domain: string;
+      type: string;
+    };
+    isp: string;
+  };
+}
 
-const Details: FC = (props: Props) => {
+function Details({ locationInfo }: Props): ReactElement {
   return (
     <>
       <section className={styles['details-section']}>
@@ -26,6 +49,6 @@ const Details: FC = (props: Props) => {
       </section>
     </>
   );
-};
+}
 
 export default Details;
