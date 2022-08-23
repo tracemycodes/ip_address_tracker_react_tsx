@@ -14,7 +14,7 @@ export interface Props {}
 
 const MapInterface: FC = (props: Props) => {
   return (
-    <MapContainer className={MapStyle['map-div']} center={center} zoom={2}>
+    <MapContainer className={MapStyle['map-div']} center={center} zoom={4}>
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'

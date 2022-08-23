@@ -1,6 +1,5 @@
-import { Action, State } from "./MapboxState"
-import * as actionTypes from "../types"
-
+import { Action, State } from './MapboxState';
+import * as actionTypes from '../types';
 
 const mapboxReducer = (state: State, action: Action) => {
   switch (action.type) {
@@ -8,21 +7,22 @@ const mapboxReducer = (state: State, action: Action) => {
       return {
         ...state,
         loading: true,
-      }
+      };
     case actionTypes.GEO_LOCATION_SUCCESS:
       return {
         ...state,
-        ipAdd: "fff",
-      }
+        ipAdd: action.payload,
+        loading: false,
+      };
     case actionTypes.GEO_LOCATION_ERROR:
       return {
         ...state,
-        error: "ghh",
-      }
+        error: 'failed to resolve Ip address',
+      };
 
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default mapboxReducer
+export default mapboxReducer;
