@@ -1,4 +1,6 @@
 .map-div {
   height: calc(100vh - 13rem);
   width: 100%;
+  z-index: 1;
+  position: relative;
 }
