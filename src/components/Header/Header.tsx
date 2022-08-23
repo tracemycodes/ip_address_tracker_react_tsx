@@ -24,7 +24,6 @@ const Header: FC = (props: IHeaderProps) => {
       );
 
       const data = await response.json();
-      console.log(data);
 
       dispatch({
         type: actionTypes.GEO_LOCATION_SUCCESS,
