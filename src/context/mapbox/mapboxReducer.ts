@@ -12,12 +12,12 @@ const mapboxReducer = (state: State, action: Action) => {
     case actionTypes.GEO_LOCATION_SUCCESS:
       return {
         ...state,
-        dropLoading: true,
+        ipAdd: "fff",
       }
     case actionTypes.GEO_LOCATION_ERROR:
       return {
         ...state,
-        dropLoading: true,
+        error: "ghh",
       }
 
     default:

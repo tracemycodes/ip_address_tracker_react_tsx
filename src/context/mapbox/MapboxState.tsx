@@ -9,14 +9,14 @@ export interface Action {
 
 export interface State {
   loading: boolean;
-  ipAdd: string;
+  ipAdd: any;
   error: null | string;
 }
 
 const initialState = {
   loading: true,
   error: null,
-  ipAdd: '',
+  ipAdd: null,
 };
 
 export type Dispatch = (action: Action) => void;

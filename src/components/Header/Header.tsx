@@ -1,12 +1,14 @@
 import React, { ChangeEvent, FC, FormEvent, useContext, useState } from 'react';
 import Details from './Details';
 import './Head.module.css';
+import MapboxContext from '../../context/mapbox/mapboxContext';
+import * as actionTypes from '../../context/types';
 
 interface IHeaderProps {}
 
 const Header: FC = (props: IHeaderProps) => {
-  // const context = useContext(IpifyContext);
-  // const { state, dispatch } = context ? context : null!;
+  const context = useContext(MapboxContext);
+  const { state, dispatch } = context ? context : null!;
 
   const [text, setText] = useState<string>('');
 
@@ -16,21 +18,17 @@ const Header: FC = (props: IHeaderProps) => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // try {
-    //   dispatch({
-    //     type: actionTypes.GET_GEO_LOCATION,
-    //   });
+    try {
+      const data = await fetch(
+        `https://geo.ipify.org/api/v2/country,city?apiKey=at_0s9wTyAQNDvDt3WxY5WA5EhdzjRzv&ipAddress=${text}`
+      );
+      console.log(data);
 
-    //   const data = await fetch(
-    //     'https://geo.ipify.org/api/v2/country,city?apiKey=at_0s9wTyAQNDvDt3WxY5WA5EhdzjRzv&ipAddress=8.8.8.8'
-    //   );
-    //   console.log(data);
-
-    //   dispatch({
-    //     type: actionTypes.GEO_LOCATION_SUCCESS,
-    //     payload: data,
-    //   });
-    // } catch (err) {}
+      dispatch({
+        type: actionTypes.GEO_LOCATION_SUCCESS,
+        payload: data,
+      });
+    } catch (err) {}
     setText('');
   };
 
