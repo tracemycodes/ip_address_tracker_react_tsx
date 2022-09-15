@@ -1,5 +1,5 @@
 import React, { FC, useContext, useEffect, useState } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import MapStyle from './MapStyle.module.css';
 import L from 'leaflet';
@@ -30,16 +30,16 @@ const MapInterface: FC = (props: Props) => {
   }, [ipAdd]);
 
   return (
-    <MapContainer className={MapStyle['map-div']} center={geoState} zoom={4}>
+    <MapContainer
+      className={MapStyle['map-div']}
+      center={[geoState.lat, geoState.lng]}
+      zoom={4}
+    >
       <TileLayer
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
-      <Marker position={[ipAdd.location.lat, ipAdd.location.lng]}>
-        <Popup>
-          A pretty CSS3 popup. <br /> Easily customizable.
-        </Popup>
-      </Marker>
+      <Marker position={[geoState.lat, geoState.lng]}></Marker>
     </MapContainer>
   );
 };
